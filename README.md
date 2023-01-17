@@ -9,7 +9,7 @@ Mysql, java spring, boostrap, html, javascript, css.
     - DataLoader (создаем начальных пользователей)
     - MvcConfig
     - SecurityConfig (разграничиваем доступ)
-- [controllers](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/controllers)(Конечныe URL)
+- [controllers](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/controllers) (Конечныe URL)
     - CreatTaskController
     - HomeController
     - PersonalController
@@ -17,15 +17,16 @@ Mysql, java spring, boostrap, html, javascript, css.
     - SettingController
     - TaskController
     - ViewTaskController
-- [models](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/models)(модели баз-данных)
+- [models](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/models) (модели баз-данных)
     - Role
     - Task
     - User
-- [repo](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/repo)(модели баз-данных)(поиск)
+- [repo](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/repo) (поиск)
     - RoleRepository
     - TaskRepository
     - UserRepository
-- services
+- [services](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/services) ()
+    - UserService
 
 
 ## Запуск
