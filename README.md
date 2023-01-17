@@ -5,10 +5,11 @@
 Mysql, java spring, boostrap, html, javascript, css.
 
 ## Декомпозиция проекта:
-- Личный кабинет.
-    - User
-    - Admin
-- Роли
+- [config](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/config)
+    - DataLoader (создаем начальных пользователей)
+    - MvcConfig
+    - SecurityConfig (разграничиваем доступ)
+- [controllers](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/controllers)
     - Admin
     - Manager
     - User
