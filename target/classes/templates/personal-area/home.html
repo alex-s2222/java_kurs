@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      class="h-100" lang="ru">
+<head>
+    <title th:text="Главная"></title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .animation-left{
+            display: inline-block!important;
+            margin: 0 0.5rem;
+
+            animation: bounceInLeft;
+            animation-duration: 1s;
+        }
+        .animation-right{
+            display: inline-block!important;
+            margin: 0 0.5rem;
+
+            animation:bounceInRight;
+            animation-duration: 1s;
+        }
+        .animation-up{
+            display: inline-block!important;
+            margin: 0 0.5rem;
+            animation: bounceInUp;
+            animation-duration: 2s;
+        }
+    </style>
+</head>
+<body class="d-flex h-100 text-white bg-blue">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+    <header th:insert="/blocks/header :: header-into" class=""></header>
+
+    <main class="m-5">
+        <div class="row">
+<!--            <div class="col m-2 bg-light text-dark p-3 animation-left" style="border-top: #ffa53a 5px solid;">-->
+<!--                <div class="mx-3">-->
+<!--                    <h2>Для наблюдателя</h2>-->
+<!--                    <hr class="w-100 mb-2">-->
+<!--                    <table th:if="${tasks}" class="table table-borderless mx-auto">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th scope="col">Задача</th>-->
+<!--                            <th scope="col">Дата создания</th>-->
+<!--                            <th scope="col">Исполнитель</th>-->
+<!--                            <th scope="col">Автор</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <tr th:each="el : ${tasks}">-->
+<!--                            <td><i class="bi bi-bookmark"></i> <a th:href="'/view/'+${el.id}"-->
+<!--                                                                  th:text="${el.name}"></a></td>-->
+<!--                            <td th:text="${el.date}"></td>-->
+<!--                            <td th:text="${el.executor}"></td>-->
+<!--                            <td th:text="${el.author}"></td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                    <div th:if="${error}" th:text="${error}">-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col m-2 bg-light text-dark p-3 animation-right" style="border-top: #50f650 5px solid;">
+                <div class="mx-3">
+                    <h2>Для исполнителя</h2>
+                    <hr class="w-100 mb-2">
+                    <table th:if="${tasksExec}" class="table table-borderless mx-auto">
+                        <thead>
+                        <tr>
+                            <th scope="col">Задача</th>
+                            <th scope="col">Дата создания</th>
+                            <th scope="col">Наблюдатель</th>
+                            <th scope="col">Автор</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="el : ${tasksExec}">
+                            <td><i class="bi bi-bookmark"></i> <a th:href="'/view/'+${el.id}"
+                                                                  th:text="${el.name}"></a></td>
+                            <td th:text="${el.date}"></td>
+                            <td th:text="${el.observer}"></td>
+                            <td th:text="${el.author}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div th:if="${errorExec}" th:text="${errorExec}">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div sec:authorize="hasAnyRole('ROLE_EDITOR','ROLE_ADMIN')" class="row">
+            <div class="col m-2 bg-light text-dark p-3 animation-up" style="border-top: #8e92f1 5px solid;">
+                <div class="mx-3">
+                    <h2>Заказы</h2>
+                    <hr class="w-100 mb-2">
+                    <table th:if="${tasksAuthor}" class="table table-borderless mx-auto">
+                        <thead>
+                        <tr>
+                            <th scope="col">Задача</th>
+                            <th scope="col">Дата создания</th>
+                            <th scope="col">Наблюдатель</th>
+                            <th scope="col">Исполнитель</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="el : ${tasksAuthor}">
+                            <td><i class="bi bi-bookmark"></i> <a th:href="'/view/'+${el.id}"
+                                                                  th:text="${el.name}"></a></td>
+                            <td th:text="${el.date}"></td>
+                            <td th:text="${el.observer}"></td>
+                            <td th:text="${el.executor}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div th:if="${errorAuthor}" th:text="${errorAuthor}">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+    <footer class="mt-auto text-white-50 text-center">
+        <p>Курсовая работа по разработке Java-приложений. <br> Автор: Сачков А.М</p>
+    </footer>
+
+</div>
+</body>
+</html>
