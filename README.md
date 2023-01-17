@@ -22,7 +22,9 @@ Mysql, java spring, boostrap, html, javascript, css.
     - Task
     - User
 - [repo](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app/repo)(модели баз-данных)(поиск)
-    - 
+    - RoleRepository
+    - TaskRepository
+    - UserRepository
 - services
 
 
