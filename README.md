@@ -4,4 +4,15 @@
 
 ## Используемые технологии:
 Mysql, java spring, boostrap, html, javascript, css.
-## Что бы запустить проект нужно - [Application.java](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app)
+
+## Декомпозиция проекта:
+- Личный кабинет.
+    - User
+    - Admin
+- Роли
+    - Admin
+    - Manager
+    - User
+
+## Запуск проекта 
+нужно  - [Application.java](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app)
