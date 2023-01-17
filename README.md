@@ -37,6 +37,7 @@ mysql -u root -p -e "CREATE USER 'root'@'localhost' IDENTIFIED BY 'root12345';"
 mysql -u root -p -e "GRANT ALL ON root.* TO 'root'@'localhost';"
 </code>
 
-
-
 запуск приложение осуществляется с помощью - [Application.java](https://github.com/alex-s2222/java_kurs/tree/main/src/main/java/com/main/app)
+
+## Автор 
+Сачков А.М ИКПИ-01
